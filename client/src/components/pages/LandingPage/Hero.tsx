@@ -1,5 +1,7 @@
-import { ArrowDownToDot } from "lucide-react";
+import { ArrowUpFromDot } from "lucide-react";
 import styles from "../../styles/landingpage.module.scss";
+import DraggableComponent from "./DragAndDrop";
+import { motion } from "framer-motion";
 
 interface LinkComponentI { text:string, url: string }
 
@@ -18,7 +20,10 @@ export default function Hero() {
 
             </div>
             <div className={styles["medium-text"]}>
-
+                <h3>Cognitive Functions</h3>
+                <div className={styles["container"]}>
+                    <DraggableComponent />
+                </div>
             </div>
             <div className={styles["small-text-container"]}>
                 <div className={styles["small-text"]}>
@@ -29,11 +34,17 @@ export default function Hero() {
                         target="_blank" rel="noopener">Take Test</a>
                     <span></span>
                 </div>
-                <div className={styles["scrolldown-container"]}>
-                    <p>Scroll Down</p>
-                    <label>
-                        <ArrowDownToDot />
-                    </label>
+                <div className={styles["micro-container"]}>
+                    <div className={styles["external-container"]}>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div className={styles["scrolldown-container"]}>
+                        <p>Scroll Down</p>
+                        <motion.label whileHover={{scale: 1.1,rotate: 180, transition: {duration: 0.1, ease: "linear"}}}>
+                            <ArrowUpFromDot />
+                        </motion.label>
+                    </div>
                 </div>
             </div>
         </section>

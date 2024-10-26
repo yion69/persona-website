@@ -1,0 +1,615 @@
+$color-purple-1: #88619a;
+$color-purple-2: #e7dfea;
+$color-green-1: #d6ece3;
+$color-blue-1: #d9eaf0;
+$color-yellow-1: #f9eed7;
+
+$size-h3: 40px;
+$size-h3-mobile: 28px;
+$size-p-desktop: 16px;
+$size-p-mobile: 14px;
+$size-trivia-h4: 24px;
+$size-trivia-h4-mobile: 18px;
+$size-cognitive-container-h3: 40px;
+$size-cognitive-container-h3-mobile: 24px;
+$size-cognitive-container-p: 16px;
+$size-cognitive-container-p-mobile: 14px;
+
+$font: "Poppins";
+
+$light-bg: #f0f0f0;
+$light-text: #151515;
+$dark-bg: #09090b;
+$dark-text: #d4d4d8;
+$yellow-bg: #F5ECD9;
+$yellow-text: #151515;
+
+.root-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    font-family: $font;
+
+    & > div {
+        width: 70%;
+        height: auto;
+        padding: 10px 30px;
+        box-sizing: border-box;
+        background-color: transparent;
+    }
+
+    .header-container {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: $size-h3;
+        margin: 0;
+    }
+}
+
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .intro-container-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        & > * {
+            margin: 4px 0;
+        }
+    }
+
+    .intro-container-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 100%;
+
+        h4 {
+            margin: 0 0 0 20px ;
+            font-weight: normal;
+        }
+
+        p {
+            width: 80%;
+            margin:  14px auto;
+            line-height: 2.5rem;
+            font: italic;
+            font-size: 14px;
+        }
+    }
+
+    * {
+        margin: 0;
+    }
+    
+    & > div {
+        margin: 10px 0;
+    }
+}
+
+.function-section {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    & > div {
+        margin: 10px 0;
+    }
+}
+
+.infocard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+
+    & > * {
+        margin: 0;
+    }
+
+    .infocard-text {
+        width: 100%;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    .functions-container {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        height: auto;
+        width: 100%;
+    }
+}
+
+.cognitive-container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 4px solid black;
+    border-radius: 10px;
+
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        h3 {
+            font-size: $size-cognitive-container-h3;
+        }
+    
+        span {
+            max-width: 50%;
+            font-size: $size-cognitive-container-p;
+            text-align: end;
+            word-break: normal;
+        }
+    }
+    
+    p {
+        font-size: 14px;
+    }
+}
+
+.trivia-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 124px;
+    padding: 4px 20px;
+    box-sizing: border-box;
+    background-color: $color-purple-2;
+    border-left: 4px solid $color-purple-1;
+
+    h4 {
+        font-size: $size-trivia-h4;
+    }
+}
+
+.reference-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 4px solid black;
+    text-decoration: none;
+    color: black;
+    transition: background 0.2s, color 0.1s;
+    p {
+        font-size: 14px;
+        
+        span {
+            color: $color-purple-1;
+        }
+    }
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+}
+
+.function-explanation-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+
+    .explanation-section-1 {
+        width: 70%;
+        height: 100%;
+
+        .explanation-heading {
+            font-size: 28px;
+        }
+
+        .explanation-list {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+            padding: 20px 0;
+            list-style-type: none;
+            
+            .list-item {
+                width: 100%;
+                height: 50%;
+                padding: 10px;
+                box-sizing: border-box;
+
+                h5 {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .explanation-section-2 {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        height: 100%;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+    }
+}
+
+.mbti-character-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+
+    .character-card-container {
+        display: grid;
+        grid-template-rows: repeat(3,1fr);
+        height: auto;
+        width: 100%;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+}
+
+.character-card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 4px solid black;
+
+    img {
+        height: 80px;
+        width: 100px;
+        object-fit: cover;
+    }
+
+    .character-card-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+        align-items: end;
+        padding: 2px 10px;
+        box-sizing: border-box;
+
+        h4 {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        p {
+            display: flex;
+            justify-content: end;
+            margin: 4px 0;
+            gap: 10px;
+            font-size: 14px;
+            
+        }
+
+        .character-card-type {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+            gap: 8px;
+
+            & > * {
+                display: flex;
+                align-items: center;
+                justify-content: center;    
+                width: 50px;
+                border-radius: 999rem;
+                background-color: #fff;
+                color: black;
+                font-size: 12px;
+            }
+        }
+ 
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+}
+
+.theme-button-container {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    width: 50;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 999rem;
+    border: 2px solid black;
+    transition: all 0.3s ease;
+
+    span {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+
+        .theme-button {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        .theme-button + label::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .theme-button:checked + label::before {
+            z-index: 0;
+        }
+
+        label { 
+            display: flex;
+            gap: 4px;
+            cursor: pointer;
+            
+            & > * {
+                z-index: 2;
+                width: 20px;
+            }
+            p {
+                width: auto !important;
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .root-container {
+        & > div {
+            width: 100%;
+            padding: 10px 20px;
+        }
+
+        h3 {
+            font-size: $size-h3-mobile;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .intro-section {
+        height: auto !important;
+
+        .intro-container-1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+
+            & > * {
+                margin: 4px 0;
+            }
+        }
+
+        .intro-container-2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            width: 100%;
+
+            h4 {
+                margin: 0 0 0 0px ;
+                font-weight: normal;
+                font-size: 14px;
+            }
+
+            p {
+                width: 90%;
+                margin:  14px auto;
+                line-height:normal;
+                font: italic;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .function-explanation-container {
+        flex-direction: column;
+
+        .explanation-section-1 {
+            width: 100%;
+            height: 80%;
+
+            .explanation-heading {
+                font-size: 22px;
+            }
+
+            .explanation-list {
+                
+                .list-item {
+                    height: 25%;
+                    padding: 4px;
+
+                    h5 {
+                        font-size: 16px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .explanation-section-2 {
+            width: 100%;
+            height: 20%;
+            padding: 0 0 0 0;
+        }
+    }
+
+    .infocard-container {
+
+        .functions-container {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 4px;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    .cognitive-container {
+        height: auto;
+        border: 2px solid black;
+
+        .heading {
+            
+            h3 {
+                font-size: $size-cognitive-container-h3-mobile;
+            }
+        
+            span {
+                font-size: $size-cognitive-container-p-mobile;
+            }
+        }
+        
+        p {
+            display: none;
+        }
+    }
+
+    .trivia-card-container {
+        h4 {
+            font-size: $size-trivia-h4-mobile;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+}
+
+@mixin theme($bg-color, $color) {
+    color: $color;
+    background-color: $bg-color;
+
+    * {
+        border-color: $color;
+    }
+
+    .cognitive-container {
+        @if $bg-color == $dark-bg {
+            border: 2px solid $color;
+        }
+    }
+
+    .trivia-card-container {
+        @if $bg-color == $dark-bg {
+            border-left: 4px solid $color;
+            background-color: #18181b;
+        } 
+        @else if $bg-color == $yellow-bg {
+            border-left: 4px solid $color;
+            background-color: #E8DFCC;
+        }
+        @else {
+            border-left: 4px solid $color-purple-1;
+            background-color: $color-purple-2;
+        }
+        
+        border-radius: 2px;
+        color: $color;
+    }
+
+    .reference-card-container {
+        @if $bg-color == $dark-bg {
+            border: 2px solid;
+        }
+
+        border-color: $color;
+        text-decoration: none;
+        color: $color;
+
+        &:hover {
+            background-color: $color;
+            color: $bg-color;
+        }
+    }
+    .character-card {
+        @if $bg-color == $dark-bg {
+            border: 2px solid;
+        }
+        border-color: $color;
+        img {
+            border-right: 2px solid $color;
+        }
+    }
+    .theme-button-container {
+        background-color: $bg-color;
+        @if $bg-color == $dark-bg {
+            .theme-button:checked + label::before {
+                z-index: 0;
+                background-color: $light-bg;
+            }
+            .theme-button:checked + label * {
+                color: $light-text;
+            }
+        } @else if $bg-color == $yellow-bg or $bg-color == $light-bg {
+            .theme-button:checked + label::before {
+                z-index: 0;
+                background-color: $dark-bg;
+            }
+            .theme-button:checked + label * {
+                color: $dark-text;
+            }
+        } 
+    }
+}
+
+.theme-light {
+    @include theme($light-bg,$light-text);
+}
+
+.theme-dark {
+    @include theme($dark-bg,$dark-text)
+}
+
+.theme-warm {
+    @include theme($yellow-bg,$yellow-text)
+}

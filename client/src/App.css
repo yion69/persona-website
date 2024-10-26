@@ -1,0 +1,13 @@
+#root {
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/poppins.ttf");
+}
+
+@font-face {
+  font-family: "DmSans";
+  src: url("/DmSans.ttf");
+}

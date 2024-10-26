@@ -1,0 +1,190 @@
+$size-title: 32px;
+$size-type: 14px;
+$size-description: 16px;
+
+$title-mobile: 60px;
+$title-tablet: 120px;
+$title-desktop: 140px;
+
+$color-purple: #e7dfea;
+$color-green: #d6ece3;
+$color-blue: #d9eaf0;
+$color-yellow: #f9eed7;
+
+$font-poppins: "Poppins";
+
+$container-color: (
+    1: $color-purple,
+    2: $color-green,
+    3: $color-blue,
+    4: $color-yellow
+);
+
+.root-container {
+    height: auto;
+    width: 100%;
+    font-family: $font-poppins;
+    
+    & > div {
+         display: flex;
+        height: 100dvh;
+        width: 100%;
+      
+        @each $index, $color in $container-color{
+            &:nth-of-type(#{$index}) {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+.mbtirow-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .container-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+
+        h3 {
+            margin: 32px 0 0 0 ;
+            font-size: $title-desktop;
+        }
+
+    }
+    
+    .container-main {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 2px;
+    }
+}
+
+.mbticard-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+        cursor: pointer;
+    }
+    
+    .card-img {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        height: 70%;
+        width: 100%;
+        margin: 0;
+
+        .image {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+    }
+
+    .card-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        height: 30%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+
+        .name {
+            margin: 0;
+            font-size: $size-title;
+        }
+        .type {
+            margin: 0;
+            font-size: $size-type;
+        }
+        .description {
+            margin: 12px 0 0 0;
+            font-size: $size-description;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .mbtirow-container {
+        .container-background {
+            align-items: start;
+            justify-content: center;
+            
+            h3 {
+                font-size: $title-mobile !important;
+            }
+        }
+
+        .container-main {
+            grid-template-columns: repeat(4,100vw);
+            grid-auto-flow: column;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+
+            & > div {
+                scroll-snap-align: start;
+            }
+
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            
+        }
+    }
+}
+
+@media (min-width:767px) and (max-width: 1280px) {
+    .mbtirow-container {
+
+        .container-background {
+            align-items: center;
+            justify-content: center;
+            
+            h3 {
+                position: relative;
+                bottom: 27%;
+                font-size: $title-tablet;
+            }
+        }
+
+        .container-main {
+            grid-template-columns: repeat(4,50vw);
+            grid-auto-flow: column;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+
+            & > div:nth-of-type(odd) {
+                scroll-snap-align: start;
+            }
+
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            
+        }
+    }
+}

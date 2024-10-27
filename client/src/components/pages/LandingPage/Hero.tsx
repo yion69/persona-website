@@ -20,7 +20,6 @@ export default function Hero() {
 
             </div>
             <div className={styles["medium-text"]}>
-                <h3>Cognitive Functions</h3>
                 <div className={styles["container"]}>
                     <DraggableComponent />
                 </div>

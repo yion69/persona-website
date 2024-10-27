@@ -47,6 +47,7 @@ $font-dmsans: "DmSans";
  
         .medium-text {
             display: flex;
+            justify-content: space-evenly;
             flex-direction: column;
             height: 100%;
             padding: 4px;
@@ -54,12 +55,6 @@ $font-dmsans: "DmSans";
             box-sizing: border-box;
             overflow: scroll;
             background-color: $color-green;
-
-            h3 {
-                margin: 0;
-                padding: 10px 0;
-                text-align: center;
-            }
 
             .container {
                 flex: 1;

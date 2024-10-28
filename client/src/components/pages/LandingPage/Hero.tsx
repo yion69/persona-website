@@ -2,6 +2,7 @@ import { ArrowUpFromDot } from "lucide-react";
 import styles from "../../styles/landingpage.module.scss";
 import DraggableComponent from "./DragAndDrop";
 import { motion } from "framer-motion";
+import logo from "../../../assets/misc/16-personalities-logo.svg"
 
 interface LinkComponentI { text:string, url: string }
 
@@ -17,7 +18,13 @@ export default function Hero() {
     return(
         <section className={styles["section-1"]}>
             <div className={styles["main-text"]}>
-
+                <h1>A website about Myers–Briggs Type Indicator and how cognitive functions works</h1>
+                <div className={styles["link-container"]}>
+                    <a  href="https://www.16personalities.com/free-personality-test"
+                        target="_blank" 
+                        rel="noopener" 
+                        className={styles["link-read"]} >Read More</a>
+                </div>
             </div>
             <div className={styles["medium-text"]}>
                 <div className={styles["container"]}>
@@ -35,8 +42,16 @@ export default function Hero() {
                 </div>
                 <div className={styles["micro-container"]}>
                     <div className={styles["external-container"]}>
-                        <div></div>
-                        <div></div>
+                        <div className={styles["personalities-container"]}>
+                            <img src={logo} alt="" />
+                            <p>a personality framework and test that categorizes people into 16 distinct personality types</p>
+                        </div>
+                        <div className={styles["myers-container"]}>
+                            <h4>Myers&Briggs® Foundation</h4>
+                            <p>
+                                a nonprofit organization that promotes the ethical and accurate use of the Myers-Briggs Type Indicator (MBTI) assessment: 
+                            </p>
+                        </div>
                     </div>
                     <div className={styles["scrolldown-container"]}>
                         <p>Scroll Down</p>

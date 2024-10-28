@@ -14,6 +14,8 @@ $color-yellow: #e4ae3a;
 
 $font: "Poppins";
 $font-dmsans: "DmSans";
+$font-inter: "Inter";
+$font-grapphik: "Graphik";
 
 .parent-container {
     height: auto;
@@ -38,11 +40,65 @@ $font-dmsans: "DmSans";
         box-sizing: border-box;
         
         .main-text {
-            column-span: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             height: 100%;
+            padding: 20px 32px;
+            column-span: 3;
             grid-row: span 2;
+            box-sizing: border-box;
             border-radius: 40px;
             background-color: $color-purple;
+
+            h1 {
+                margin: 0;
+                font-size: 64px;
+            }
+
+            .link-container {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                width: 100%;
+                height: 15%;
+
+                a {
+                    text-decoration: none;
+                }
+
+                .link-read {
+                    position: relative;
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 10px 32px;
+                    border-radius: 999rem;
+                    background-color: #fff;
+                    font-size: 28px;
+                    transition: all 0.5s;
+
+                    &::before {
+                        content: "";
+                        height: 0px;
+                        width: 0px;
+                        position: absolute;
+                        bottom: -100px;
+                        left: -100px;
+                        border-radius: 999rem;
+                        background-color: #fff;
+                        transform: scale(1);
+                        transition: all 0.5s;
+                    }
+                    &:hover::before {
+                        mix-blend-mode: difference;
+                        bottom: -300px;
+                        left: -200px;
+                        height: 500px;
+                        width: 500px;
+
+                    }
+                }
+            }
         }
  
         .medium-text {
@@ -77,35 +133,34 @@ $font-dmsans: "DmSans";
             }
 
             .small-text {
-                position: relative;
                 display: flex;
                 flex-direction: column;
                 align-items: start;
-                justify-content: center;
-                padding: 5px 20px;
+                justify-content: start;
+                padding: 20px 26px;
                 box-sizing: border-box;
                 background-color: $color-blue;
                 transition: transform 0.3s;
 
                 h3 {
-                    margin: -20px 0 0 0;
-                    font-size: 20px;
+                    margin: 0;
+                    font-size: 38px;
                 }
                 
                 p {
-                    font-size: 16px;
+                    margin: 0;
+                    font-size: 24px;
                 }
 
                 a {
-                    position: absolute;
-                    top: 75%;
-                    align-self: center;
-                    padding: 12px 24px;
+                    margin: auto auto 4px auto;
+                    padding: 10px 48px;
                     border-radius: 999rem;
-                    border: 3px solid #151515;
                     background-color: #fff;
                     text-decoration: none;
-                    color: #151515;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: #3D8CA6;
                     transition: background-color 0.3s ease;
 
                     &:hover {
@@ -115,7 +170,7 @@ $font-dmsans: "DmSans";
                 }
  
                 &:has(a:hover) {
-                    transform: scale(1.03);
+                    transform: scale(1.01);
                 }
 
             }
@@ -128,13 +183,57 @@ $font-dmsans: "DmSans";
             .external-container {
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
-                gap: 4px;
-                padding: 4px 0px;
+                gap: 10px;
+                padding: 8px 0px;
                 box-sizing: border-box;
                 
                 div {
                     border-radius: 20px;
-                    background-color: red;
+                }
+
+                .personalities-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 10px;
+                    background-color: $color-green-light;
+
+                    img {
+                        width: 100%;
+                        height: fit-content;
+                    }
+
+                    p {
+                        font-size: 12px;
+                    }
+                    
+                }
+                .myers-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    background-color: #DFDFDF;
+                    font-family: $font-grapphik;
+                    
+                    h4 {
+                        margin: 0;
+                        padding: 4px 0px;
+                        font-weight: 300;
+                        font-size: 24px;
+                        border: 2px solid black;
+                        border-left: none;
+                        border-right: none;
+                    }
+
+                    p {
+                        font-size: 10px;
+                        margin: 0;
+                        margin-top: 4px;
+                    }
                 }
             }
             

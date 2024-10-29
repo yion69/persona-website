@@ -7,6 +7,9 @@ export default function LandingPage() {
         <div className={styles["parent-container"]}>
             <Navbar />
             <Hero />
+            <section></section>
         </div>
     )
 }
+
+//https://www.checklist.design/

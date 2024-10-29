@@ -11,7 +11,8 @@ $color-yellow: #e4ae3a;
 $font-dmsans: "DmSans";
 
 .navbar-container {
-    position: fixed;
+    z-index: 999;
+    position: absolute;
     top: 0;
     display: flex;
     align-items: center;
@@ -38,7 +39,7 @@ $font-dmsans: "DmSans";
         position: relative;
         display: flex;
         gap: 4px;
-        margin: 0 0 0 5%;
+        margin: 0 0 0 2.5%;
 
         img {
             width: 32px;
@@ -58,11 +59,11 @@ $font-dmsans: "DmSans";
     .navbar-list {
         display: flex;
         list-style-type: none;
-        margin: 0 5% 0 0;
-        gap: 48px;
+        margin: 0 2.5% 0 0;
+        gap: 38px;
 
         li {
-            font-size: 18px;
+            font-size: 16px;
             transition: transform 0.4s ease;
             
             a {
@@ -73,7 +74,7 @@ $font-dmsans: "DmSans";
             }
 
             &:hover {
-                transform: scale(1.10);
+                transform: scale(1.25);
             }
 
             &:hover a {

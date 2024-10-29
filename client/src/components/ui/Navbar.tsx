@@ -1,4 +1,3 @@
-import classNames from "classnames"
 import styles from "../styles/navbar.module.scss"
 
 export default function Navbar () {
@@ -11,12 +10,15 @@ export default function Navbar () {
                 </div>
                 <ul className={styles["navbar-list"]}>
                     <li className={styles["nav-item"]}>
-                        <a href="#" className={styles["nav-link"]}>
+                        <a href="#">
                             16 Personalities
                         </a>
                     </li>
                     <li>
                         <a href="#">Cognitive Functions</a>
+                    </li>
+                    <li>
+                        <a href="#">Socionics</a>
                     </li>
                     <li>
                         <a href="#">Take Test</a>

@@ -3,14 +3,11 @@ import { DndContext, DragEndEvent, UniqueIdentifier } from "@dnd-kit/core";
 import { arrayMove, rectSortingStrategy, SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { useState } from "react";
+import functions from "../../../assets/cognitive-functions/functions";
 
-interface ElementI {
-    id:number,
-    heading: string,
-    img: string
-}
+interface ElementI { id:number, img: string }
 
-function Element ({id, heading, img}:ElementI) {
+function Element ({id, img}:ElementI) {
  
     const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id});
     const style = {
@@ -25,8 +22,7 @@ function Element ({id, heading, img}:ElementI) {
              {...attributes}
              {...listeners}
              className={styles["element-container"]}>
-            <img src={img} alt="" />
-            <h3>{ heading }</h3>
+            <img src={img}  alt="NI" />
         </div>  
     )
 }
@@ -35,14 +31,14 @@ function Element ({id, heading, img}:ElementI) {
 
 function DraggableComponent () {
     const [items,setItems] = useState([
-        {id: 1, heading: "Introverted Feeling"},
-        {id: 2, heading: "Extraverted Feeling"},
-        {id: 3, heading: "Introverted Thinking"},
-        {id: 4, heading: "Extraverted Thinking"},
-        {id: 5, heading: "Introverted Intuition"},
-        {id: 6, heading: "Extraverted Intuition"},
-        {id: 7, heading: "Introverted Sensing"},
-        {id: 8, heading: "Extraverted Sensing"},
+        {id: 1, img: functions.Fe},
+        {id: 2, img: functions.Fi},
+        {id: 3, img: functions.Ne},
+        {id: 4, img: functions.Ni},
+        {id: 5, img: functions.Te},
+        {id: 6, img: functions.Ti},
+        {id: 7, img: functions.Se},
+        {id: 8, img: functions.Si},
     ]);
     const getItemPosition = (id:UniqueIdentifier) => items.findIndex(item => item.id === id);
     
@@ -64,7 +60,7 @@ function DraggableComponent () {
                     <div className={styles["drag-component-container"]}>
                         {
                             items.map((e,i) => (
-                                <Element key={i} id={e.id} heading={e.heading} img="" />
+                                <Element key={i} id={e.id} img={e.img} />
                             ))
                         }
                     </div>

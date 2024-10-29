@@ -50,6 +50,7 @@ $font-grapphik: "Graphik";
             box-sizing: border-box;
             border-radius: 40px;
             background-color: $color-purple;
+            overflow: hidden;
 
             h1 {
                 margin: 0;
@@ -184,55 +185,83 @@ $font-grapphik: "Graphik";
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 gap: 10px;
-                padding: 8px 0px;
+                margin-bottom: 10px;
+                padding: 0;
                 box-sizing: border-box;
                 
                 div {
                     border-radius: 20px;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        width: 2px;
+                        height: 2px;
+                        border-radius: 999rem;
+                        background-color: transparent;
+                        transition: all 0.5s ease, border-radius 0.1s;
+                    }
+
+                    &:hover::after {
+                        left: 0%;
+                        top: 0%;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 20px;
+                        background-color: white;
+                        mix-blend-mode:exclusion;
+                    }
+
+                    label { 
+                        position: absolute;
+                        bottom: 2px;
+                        right: 12px;
+                        color: #151515;
+                    }   
+                    p {
+                        margin: 0;
+                        width: 100%;
+                        height: 20%;
+                        font-size: 14px;
+                        word-break: break-all;
+                    }
                 }
 
                 .personalities-container {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-                    padding: 10px;
-                    background-color: $color-green-light;
-
-                    img {
-                        width: 100%;
-                        height: fit-content;
-                    }
-
-                    p {
-                        font-size: 12px;
-                    }
-                    
-                }
-                .myers-container {
+                    position: relative;
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 10px;
+                    padding: 20px;
                     box-sizing: border-box;
-                    background-color: #DFDFDF;
-                    font-family: $font-grapphik;
+                    background-color: #C75B7A;
                     
                     h4 {
+                        height: fit-content;
+                        width: 100%;
                         margin: 0;
-                        padding: 4px 0px;
-                        font-weight: 300;
-                        font-size: 24px;
-                        border: 2px solid black;
-                        border-left: none;
-                        border-right: none;
+                        font-size: 28px;
+                        word-break: break-all;
                     }
+                }
 
-                    p {
-                        font-size: 10px;
+                .myers-container {
+                    position: relative;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    background-color: #E68369;
+                    
+                    h4 {
+                        height: fit-content;
+                        width: 100%;
                         margin: 0;
-                        margin-top: 4px;
+                        font-size: 24px;
+                        word-break: break-all;
                     }
                 }
             }
@@ -269,6 +298,7 @@ $font-grapphik: "Graphik";
                     
                     &:hover {
                         cursor: pointer;
+                        transform: scale(1.1);
                     }
 
                     svg {

@@ -1,0 +1,27 @@
+.container {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 999rem;
+    background-color: #f0f0f0;
+}
+
+.small {
+    height: 35px;
+    font-size: 22px;
+}
+
+.medium {
+    height: 80px;
+}
+
+.large {
+    height: 120px;
+
+}
+
+.outline {
+    border: 3px solid #151515;
+}

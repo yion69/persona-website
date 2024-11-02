@@ -1,6 +1,7 @@
-import { ArrowDownToDot, SquareArrowOutDownRight } from "lucide-react";
+import { ArrowDownToDot, MoveDown, SquareArrowOutDownRight } from "lucide-react";
 import styles from "../../styles/landingpage.module.scss";
 import DraggableComponent from "./DragAndDrop";
+import { motion } from "framer-motion";
 
 function handleLinkClick(url:string) { window.open(url, "_blank")};
 
@@ -49,7 +50,40 @@ export default function Hero() {
                     </div>
                     <div className={styles["scrolldown-container"]}>
                         <p>Scroll Down</p>
-                        <label><ArrowDownToDot /></label>
+                        <label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevrons-down">
+                                <motion.path d="m7 6 5 5 5-5"
+                                    initial={{
+                                        y: 0,
+                                        strokeOpacity: 1
+                                    }}
+                                    animate={{
+                                        y: 2,
+                                        strokeOpacity: 0.4,
+                                    }}
+                                    transition={{
+                                        duration: 1,
+                                        repeat: Infinity,
+                                        repeatType: "reverse"
+                                    }}
+                                />
+                                <motion.path d="m7 13 5 5 5-5"
+                                    initial={{
+                                        y: 0,
+                                        strokeOpacity: 1
+                                    }}
+                                    animate={{
+                                        y: 2,
+                                        strokeOpacity: 0.8,
+                                    }}
+                                    transition={{
+                                        duration: 1,
+                                        repeat: Infinity,
+                                        repeatType: "reverse"
+                                    }}
+                                />
+                            </svg>
+                        </label>
                     </div>
                 </div>
             </div>

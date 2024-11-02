@@ -3,27 +3,32 @@ import { DndContext, DragEndEvent, UniqueIdentifier } from "@dnd-kit/core";
 import { arrayMove, rectSortingStrategy, SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { useState } from "react";
+import { motion, useSpring } from "framer-motion";
 import functions from "../../../assets/cognitive-functions/functions";
 
 interface ElementI { id:number, img: string }
 
 function Element ({id, img}:ElementI) {
- 
+    
     const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id});
     const style = {
         transition,
-        transform: CSS.Transform.toString(transform)
+        transform: CSS.Transform.toString(transform),
     }
-
     return (
-        <div key={ id }
+        <motion.div 
+             drag
+             dragElastic={0.8}
+             dragConstraints={{left:0, right:0, top: 0, bottom: 0}}
+             dragTransition={{bounceDamping: 10, bounceStiffness: 100}}
+             key={ id }
              ref={setNodeRef}
              style={style}
              {...attributes}
              {...listeners}
              className={styles["element-container"]}>
             <img src={img}  alt="NI" />
-        </div>  
+        </motion.div>  
     )
 }
 

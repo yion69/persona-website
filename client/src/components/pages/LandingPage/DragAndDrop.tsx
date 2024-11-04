@@ -52,7 +52,7 @@ function DraggableComponent () {
         const {active, over} = event;
     
         if(active.id === over!.id) { return };
-        setItems(prev => {
+        setItems(_ => {
             const originalPosition = getItemPosition(active.id);
             const newPosition = getItemPosition(over!.id);
             const newArray = arrayMove(items, originalPosition, newPosition); 

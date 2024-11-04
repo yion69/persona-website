@@ -23,20 +23,9 @@
     border-radius: 20px;
     box-sizing: border-box;
     background-color: transparent;
-
-    img {
-        width: 82.5%;
-        object-fit: contain;
-        border-radius: 20px;
-        overflow: hidden;
-    }
-
-    h3 {
-        position: absolute;
-        bottom: 0;
-        font-size: 14px;
+    
+    p {
         margin: 0;
-        padding: 0 !important;
     }
 
     &:hover {

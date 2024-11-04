@@ -1,11 +1,20 @@
-import { ArrowDownToDot, MoveDown, SquareArrowOutDownRight } from "lucide-react";
+import { ArrowDown, ArrowDownToDot, MoveDown, SquareArrowOutDownRight } from "lucide-react";
 import styles from "../../styles/landingpage.module.scss";
 import DraggableComponent from "./DragAndDrop";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 function handleLinkClick(url:string) { window.open(url, "_blank")};
 
 export default function Hero() {
+
+    const handleScrollDown = () => {
+        window.scrollTo({
+            top: 750,
+            behavior: "smooth"
+        })
+    }
+
     return(
         <section className={styles["section-1"]}>
             <div className={styles["main-text"]}>
@@ -48,8 +57,7 @@ export default function Hero() {
                             </label>
                         </div>
                     </div>
-                    <div className={styles["scrolldown-container"]}>
-                        <p>Scroll Down</p>
+                    <div className={styles["scrolldown-container"]} onClick={()=>handleScrollDown()}>
                         <label>
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevrons-down">
                                 <motion.path d="m7 6 5 5 5-5"

@@ -1,8 +1,7 @@
-import { ArrowDown, ArrowDownToDot, MoveDown, SquareArrowOutDownRight } from "lucide-react";
+import { SquareArrowOutDownRight } from "lucide-react";
 import styles from "../../styles/landingpage.module.scss";
 import DraggableComponent from "./DragAndDrop";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 
 function handleLinkClick(url:string) { window.open(url, "_blank")};
 

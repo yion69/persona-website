@@ -1,14 +1,4 @@
 import styles from "../styles/footer.module.scss"
-import img from "../../assets/misc/footer-desktop.svg"
-import { Github } from "lucide-react"
-
-function List () {
-    return(
-        <div className={styles["list-container"]}>
-
-        </div>
-    )
-}
 
 export default function Footer () {
     return(

@@ -1,0 +1,43 @@
+.swiper-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.swiper-component {
+    height: 685px;
+    width: 100%;
+}
+
+.swiper-item {
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+    border: 4px solid black;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+
+    h4 {
+        margin: 0;
+        font-size: 32px;
+        mix-blend-mode:hard-light;
+    }
+
+    p {
+        margin: 0;
+        font-size: 20px;
+    }
+}

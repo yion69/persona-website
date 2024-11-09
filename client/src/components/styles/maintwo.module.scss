@@ -8,11 +8,12 @@ $color-purple: #6a4c93;
 .container {
     display: grid;
     grid-template-columns: 30% 40% 30%;
-    height: 100dvh;
+    height: auto !important;
     width: 100%;
     padding: 0px 4px;
-
+    box-sizing: border-box;
 }
+
 .field {
     padding: 6px;
     box-sizing: border-box;
@@ -106,7 +107,7 @@ $color-purple: #6a4c93;
  
         .text {
             margin: 0;
-            font-size: 30px;
+            font-size: 16px !important;
         }
 
         .author {
@@ -120,12 +121,7 @@ $color-purple: #6a4c93;
     .socionic-container {
         display: flex;
         gap: 10px;
-        .text-container {
-            width: 60%;
-            height: 100%;
-            background-color: $color-purple;
 
-        }
         .image-container {
             display: flex;
             align-items: center;
@@ -144,6 +140,9 @@ $color-purple: #6a4c93;
         }
         
         .text-container {
+            width: 60%;
+            height: 100%;
+            background-color: $color-purple;
             display: flex;
             flex-direction: column;
             justify-content: start;
@@ -192,19 +191,19 @@ $color-purple: #6a4c93;
         .text-container {
             display: flex;
             flex-direction: column;
-            justify-content: start;
+            justify-content: space-evenly;
             height: auto;
             max-height: 100%;
             padding: 20px;
 
             h4 {
                 margin: 0;
-                font-size: 30px;
+                font-size: 26px
             }
 
             p {
                 margin: 0;
-                font-size: 20px;
+                font-size: 18px;
             }
         }
     }
@@ -221,5 +220,170 @@ $color-purple: #6a4c93;
         box-sizing: border-box;
         overflow: hidden;
         background-color: $color-yellow;
+
+        h5 {
+            padding: 4px 10px;
+            font-size: 32px;
+            margin: 0;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) { 
+    .container {
+        grid-template-columns: repeat(1,1fr);
+        box-sizing: border-box;
+    }
+
+    .field {
+        & > div {
+            border-radius: 10px;
+        }
+    }
+
+    .field-one {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-sizing: border-box;
+
+        .jung-card-container {
+            box-sizing: border-box;
+            height: 70%;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: $color-yellow;
+
+            .image-container {
+                overflow: hidden;
+                padding: 0;
+
+                img {
+                    width: 100%;
+                    height: 90%;
+                    border-radius: 10px;
+                }
+            }
+            
+            .tag-container {
+                align-items: center;
+                padding: 0;
+                height: 10%;
+            }
+
+            .text-container {
+                padding: 0px 6px;
+
+                h4 {
+                    font-size: 30px;
+                    font-weight: 400;
+                }
+                p {
+                    font-size: 20px
+                };
+            }
+        }
+
+        .list-container {
+            width: 100%;
+            height: 30%;
+        }
+    }
+    .field-two {
+        width: 100%;
+        height: 100%;
+        grid-template-rows: auto;
+        gap: 10px;
+
+        & div {
+            border-radius: 10px;
+        }
+
+        .socionic-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+    
+            .image-container {
+                display: none;
+            }
+            
+            .text-container {
+                width: 100%;
+                height: 100% !important;
+                
+                h4 {
+                    font-size: 24px;
+                    font-weight: 400;
+                }
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            background-color: $color-green;
+    
+            .text {
+                margin: 0;
+                font-size: 22px;
+            }
+
+            .author {
+                margin: 0;
+                margin-left: auto;
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+        .enneagram-container {
+            .image-container {
+                display: none;
+            }
+
+            .text-container {
+                width: 100%;
+                height: 100%;
+                justify-content: space-evenly;
+                padding: 20px;
+
+                h4 {
+                    margin: 0;
+                    font-size: 24px;
+                    font-weight: 500;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .field-three {
+        padding: 4px;
+        border-radius: 10px;
+        
+        .card-container {
+            padding: 10px;
+
+            h5 {
+                font-size: 22px; 
+                margin: 0;
+                font-weight: 500;
+                text-align: center;
+            }
+        }
     }
 }

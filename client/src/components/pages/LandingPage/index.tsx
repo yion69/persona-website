@@ -9,7 +9,7 @@ export default function LandingPage() {
         <div className={styles["parent-container"]}>
             <Navbar />
             <Hero />
-            <MainTwo />
+            <MainTwo /> 
             <Footer/>
         </div>
     )

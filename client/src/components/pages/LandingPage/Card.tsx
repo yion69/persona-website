@@ -15,6 +15,8 @@ function Card () {
 }
 
 export default function SwiperContainer () {
+
+    const tempArr = [0,1,2,3,4];
     return(
         <div className={styles["swiper-container"]}>
             <Swiper
@@ -25,19 +27,16 @@ export default function SwiperContainer () {
                     delay: 2500,
                     disableOnInteraction: true
                 }}
-                slidesPerView={2}
+                slidesPerView={window.screen.width > 767 ? 2 : 3}
                 spaceBetween={4}
+                allowTouchMove={false}
                 className={styles["swiper-component"]}
             >
-                <SwiperSlide className={styles["swiper-item"]}>
-                    <Card />
-                </SwiperSlide>
-                <SwiperSlide className={styles["swiper-item"]}>
-                    <Card />
-                </SwiperSlide>
-                <SwiperSlide className={styles["swiper-item"]}>
-                    <Card />
-                </SwiperSlide>
+                {tempArr.map((_,i) => (
+                    <SwiperSlide className={styles["swiper-item"]} key={i}>
+                        <Card />
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </div>
     )

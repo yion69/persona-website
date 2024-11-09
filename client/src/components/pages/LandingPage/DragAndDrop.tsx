@@ -27,7 +27,7 @@ function Element ({id, text, img}:ElementI) {
              {...attributes}
              {...listeners}
              className={styles["element-container"]}>
-                {img}
+                <span className={styles["icon"]}>{img}</span>
                 <p>{text}</p>
         </motion.div>  
     )
@@ -37,14 +37,14 @@ function Element ({id, text, img}:ElementI) {
 
 function DraggableComponent () {
     const [items,setItems] = useState([
-        {id: 1, text: "Introverted Thinking", img: <Puzzle size={80}/>},
-        {id: 2, text: "Extraverted Thinking", img: <ChartColumn size={80} />},
-        {id: 3, text: "Introverted Feeling", img: <Heart size={80} />},
-        {id: 4, text: "Extraverted Feeling", img: <Earth size={80} />},
-        {id: 5, text: "Introverted Sensing", img: <LibraryBig size={80} />},
-        {id: 6, text: "Extraverted Sensing", img: <Target size={80} />},
-        {id: 7, text: "Introverted Intuition", img:  <Hourglass size={80} />},
-        {id: 8, text: "Extraverted Intuition", img: <Lightbulb size={80} />},
+        {id: 1, text: "Introverted Thinking", img: <Puzzle size={75} />},
+        {id: 2, text: "Extraverted Thinking", img: <ChartColumn size={75} />},
+        {id: 3, text: "Introverted Feeling", img: <Heart size={75} />},
+        {id: 4, text: "Extraverted Feeling", img: <Earth size={75} />},
+        {id: 5, text: "Introverted Sensing", img: <LibraryBig size={75} />},
+        {id: 6, text: "Extraverted Sensing", img: <Target size={75} />},
+        {id: 7, text: "Introverted Intuition", img:  <Hourglass size={75} />},
+        {id: 8, text: "Extraverted Intuition", img: <Lightbulb size={75} />},
     ]);
     const getItemPosition = (id:UniqueIdentifier) => items.findIndex(item => item.id === id);
     

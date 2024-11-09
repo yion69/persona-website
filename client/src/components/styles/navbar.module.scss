@@ -103,6 +103,7 @@ $font-dmsans: "DmSans";
 }
 
 .sidebar-container {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -252,5 +253,8 @@ $font-dmsans: "DmSans";
                 display: block;
             }
         }
+    }
+    .sidebar-container {
+        display: block;
     }
 }

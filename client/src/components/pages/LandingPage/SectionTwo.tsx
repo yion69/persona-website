@@ -12,7 +12,7 @@ export default function MainTwo () {
     const carljungdata = ["INFJ", "5w4", "LII"]
 
     return (
-        <div className={styles["container"]}>
+        <section className={styles["container"]}>
             <div className={classNames(
                 styles["field"],
                 styles["field-one"]
@@ -81,9 +81,10 @@ export default function MainTwo () {
                 styles["field-three"],
             )}>
                 <div className={styles["card-container"]}>
+                    <h5>MBTI Golden Pairs</h5>
                     <SwiperContainer />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

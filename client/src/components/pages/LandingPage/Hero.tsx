@@ -22,7 +22,11 @@ export default function Hero() {
                     <a  href="https://www.16personalities.com/free-personality-test"
                         target="_blank" 
                         rel="noopener" 
-                        className={styles["link-read"]} >Read More</a>
+                        className={styles["link-read"]} >
+                            {window.screen.width > 768 ?
+                                <span>Read More</span>
+                            : <SquareArrowOutDownRight />}
+                    </a>
                 </div>
             </div>
             <div className={styles["medium-text"]}>
@@ -58,7 +62,7 @@ export default function Hero() {
                     </div>
                     <div className={styles["scrolldown-container"]} onClick={()=>handleScrollDown()}>
                         <label>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevrons-down">
+                            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles["svg"]}>
                                 <motion.path d="m7 6 5 5 5-5"
                                     initial={{
                                         y: 0,
@@ -91,9 +95,9 @@ export default function Hero() {
                                 />
                             </svg>
                         </label>
-                    </div>
+                    </div> 
                 </div>
-            </div>
+            </div> 
         </section>
     )
 }

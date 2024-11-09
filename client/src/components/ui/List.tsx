@@ -9,7 +9,7 @@ export default function List ({ item }:ListI) {
             <ul className={styles["list"]}>
                 {item.map((e,i) => (
                     <li key={i} className={styles["list-item"]}>
-                        <a href={e[1]} className={styles["list-link"]}>{e[0]} <MoveUpRight size={50} /> </a>
+                        <a href={e[1]} className={styles["list-link"]}>{e[0]} <MoveUpRight className={styles["icon"]} /> </a>
                     </li>
                 ))}
             </ul>

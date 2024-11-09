@@ -23,6 +23,19 @@
     border-radius: 20px;
     box-sizing: border-box;
     background-color: transparent;
+    overflow: hidden;
+    
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        .icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
     
     p {
         margin: 0;
@@ -30,5 +43,19 @@
 
     &:hover {
         cursor: grab;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .element-container {
+        .icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 10px;
+        }
     }
 }

@@ -1,13 +1,14 @@
 .swiper-container {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 625px;
     gap: 10px;
     box-sizing: border-box;
+    padding: 20px 0 0 0;
 }
 
 .swiper-component {
-    height: 685px;
+    height: 100%;
     width: 100%;
 }
 
@@ -41,3 +42,43 @@
         font-size: 20px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .swiper-component {
+        height: 600px;
+        width: 100%;
+        padding: 4px;
+    }
+
+    .swiper-item {
+        height: 50%;
+        width: 100%;
+        border-radius: 10px;
+        border: 4px solid black;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: white;
+
+        h4 {
+            margin: 0;
+            font-weight: 500;
+            font-size: 22px;
+            mix-blend-mode:hard-light;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+        }
+    }
+ }
